@@ -2,10 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Configurations>Debug;Release</Configurations>
+    <Version>1.0.1</Version>
+    <Authors>Mark Dickinson</Authors>
+    <Company>DickinsonBros</Company>
+    <RepositoryUrl>https://github.com/msdickinson/DickinsonBros.StopWatch.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>
+      A wrapper library for StopWatch
+    </Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DickinsonBros.Stopwatch.Abstractions" Version="1.0.0" />
+    <PackageReference Include="DickinsonBros.DateTime.Abstractions" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.4" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿using DickinsonBros.Redactor.Runner.Services;
 using DickinsonBros.Stopwatch.Abstractions;
+using DickinsonBros.Stopwatch.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -80,7 +81,7 @@ namespace DickinsonBros.Stopwatch.Runner
             });
 
             services.AddSingleton<IApplicationLifetime>(applicationLifetime);
-            services.AddSingleton<IStopwatchService, StopwatchService>();
+            services.AddStopwatchService();
         }
 
         IServiceCollection InitializeDependencyInjection()
