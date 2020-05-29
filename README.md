@@ -36,10 +36,6 @@ Example Runner Included in folder "DickinsonBros.Stopwatch.Runner"
 <h3>Create Instance</h3>
 
 ```C#    
-using DickinsonBros.Stopwatch;
-
-...
-
 var stopwatchService = new StopwatchService()
 ```
 
