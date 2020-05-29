@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DickinsonBros.DateTime.Abstractions" Version="1.0.0" />
+    <PackageReference Include="DickinsonBros.Stopwatch.Abstractions" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.4" />
   </ItemGroup>
 
