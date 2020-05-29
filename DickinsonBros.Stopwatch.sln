@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Misc", "9 Misc", "{DDEE2355-FECA-4F4D-85FE-FC7C82CBB42C}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\CreateNugetPackagePreRelease.ps1 = Scripts\CreateNugetPackagePreRelease.ps1
+		DickinsonBros.Stopwatch.runsettings = DickinsonBros.Stopwatch.runsettings
 		Scripts\Publish.yml = Scripts\Publish.yml
 		Scripts\Test.yml = Scripts\Test.yml
 	EndProjectSection
@@ -18,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch.Tes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Runner", "2 Runner", "{7796373C-DDA0-4CF2-B8FA-3F463B6B074A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DickinsonBros.Stopwatch.Runner", "DickinsonBros.Stopwatch.Runner\DickinsonBros.Stopwatch.Runner.csproj", "{AA5C28E8-70ED-4648-8A80-530CEC093289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch.Runner", "DickinsonBros.Stopwatch.Runner\DickinsonBros.Stopwatch.Runner.csproj", "{AA5C28E8-70ED-4648-8A80-530CEC093289}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
