@@ -22,7 +22,7 @@ namespace DickinsonBros.Stopwatch.Tests.Extensions
 
             Assert.IsTrue(serviceCollection.Any(serviceDefinition => serviceDefinition.ServiceType == typeof(IStopwatchService) &&
                                            serviceDefinition.ImplementationType == typeof(StopwatchService) &&
-                                           serviceDefinition.Lifetime == ServiceLifetime.Singleton));
+                                           serviceDefinition.Lifetime == ServiceLifetime.Transient));
         }
     }
 }
