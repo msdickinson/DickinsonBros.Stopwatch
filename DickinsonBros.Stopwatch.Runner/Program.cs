@@ -1,9 +1,9 @@
-﻿using DickinsonBros.Redactor.Runner.Services;
+﻿using DickinsonBros.Stopwatch.Runner.Services;
 using DickinsonBros.Stopwatch.Abstractions;
 using DickinsonBros.Stopwatch.Extensions;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
@@ -22,37 +22,37 @@ namespace DickinsonBros.Stopwatch.Runner
         {
             try
             {
-                using (var applicationLifetime = new ApplicationLifetime())
+                var services = InitializeDependencyInjection();
+                ConfigureServices(services);
+
+                using (var provider = services.BuildServiceProvider())
                 {
-                    var services = InitializeDependencyInjection();
-                    ConfigureServices(services, applicationLifetime);
+                    var stopwatchService = provider.GetRequiredService<IStopwatchService>();
+                    var hostApplicationLifetime = provider.GetService<IHostApplicationLifetime>();
 
-                    using (var provider = services.BuildServiceProvider())
-                    {
-                        var stopwatchService = provider.GetRequiredService<IStopwatchService>();
+                    Console.WriteLine("Start Timer And Wait 1 Seconds");
+                    stopwatchService.Start();
+                    await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
+                    stopwatchService.Stop();
+                    Console.WriteLine($"ElapsedMilliseconds: {stopwatchService.ElapsedMilliseconds}");
 
-                        Console.WriteLine("Start Timer And Wait 1 Seconds");
-                        stopwatchService.Start();
-                        await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
-                        stopwatchService.Stop();
-                        Console.WriteLine($"ElapsedMilliseconds: {stopwatchService.ElapsedMilliseconds}");
+                    Console.WriteLine("Start Continue 2 Seconds");
+                    stopwatchService.Start();
+                    await Task.Delay(TimeSpan.FromSeconds(2)).ConfigureAwait(false);
+                    stopwatchService.Stop();
+                    Console.WriteLine($"ElapsedMilliseconds: {stopwatchService.ElapsedMilliseconds}");
 
-                        Console.WriteLine("Start Continue 2 Seconds");
-                        stopwatchService.Start();
-                        await Task.Delay(TimeSpan.FromSeconds(2)).ConfigureAwait(false);
-                        stopwatchService.Stop();
-                        Console.WriteLine($"ElapsedMilliseconds: {stopwatchService.ElapsedMilliseconds}");
+                    Console.WriteLine("Start Timer Reset");
+                    stopwatchService.Reset();
+                    Console.WriteLine($"ElapsedMilliseconds: {stopwatchService.ElapsedMilliseconds}");
 
-                        Console.WriteLine("Start Timer Reset");
-                        stopwatchService.Reset();
-                        Console.WriteLine($"ElapsedMilliseconds: {stopwatchService.ElapsedMilliseconds}");
+                    Console.WriteLine("Start Timer And Wait 1 Seconds");
+                    stopwatchService.Start();
+                    await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
+                    stopwatchService.Stop();
+                    Console.WriteLine($"ElapsedMilliseconds: {stopwatchService.ElapsedMilliseconds}");
 
-                        Console.WriteLine("Start Timer And Wait 1 Seconds");
-                        stopwatchService.Start();
-                        await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
-                        stopwatchService.Stop();
-                        Console.WriteLine($"ElapsedMilliseconds: {stopwatchService.ElapsedMilliseconds}");
-                    }
+                    hostApplicationLifetime.StopApplication();
                 }
                 await Task.CompletedTask;
             }
@@ -67,7 +67,7 @@ namespace DickinsonBros.Stopwatch.Runner
             }
         }
 
-        private void ConfigureServices(IServiceCollection services, ApplicationLifetime applicationLifetime)
+        private void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
             services.AddLogging(config =>
@@ -80,7 +80,7 @@ namespace DickinsonBros.Stopwatch.Runner
                 }
             });
 
-            services.AddSingleton<IApplicationLifetime>(applicationLifetime);
+            services.AddSingleton<IHostApplicationLifetime, HostApplicationLifetime>();
             services.AddStopwatchService();
         }
 
