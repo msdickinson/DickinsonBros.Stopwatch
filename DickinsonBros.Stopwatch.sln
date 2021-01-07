@@ -3,23 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch", "DickinsonBros.Stopwatch\DickinsonBros.Stopwatch.csproj", "{792CEDF3-A301-43BB-815E-0F97C65FEBBF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Library", "1 Library", "{44C4C9E1-E118-45AE-8B7D-6968DE28ACFE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Source", "1 Source", "{44C4C9E1-E118-45AE-8B7D-6968DE28ACFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Misc", "9 Misc", "{DDEE2355-FECA-4F4D-85FE-FC7C82CBB42C}"
 	ProjectSection(SolutionItems) = preProject
-		Scripts\CreateNugetPackagePreRelease.ps1 = Scripts\CreateNugetPackagePreRelease.ps1
-		DickinsonBros.Stopwatch.runsettings = DickinsonBros.Stopwatch.runsettings
+		Scripts\Prerelease.DickinsonBros.Stopwatch.ps1 = Scripts\Prerelease.DickinsonBros.Stopwatch.ps1
 		Scripts\Publish.yml = Scripts\Publish.yml
 		Scripts\Test.yml = Scripts\Test.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch.Tests", "DickinsonBros.Stopwatch.Tests\DickinsonBros.Stopwatch.Tests.csproj", "{519FB6BF-5299-484D-A657-61A5BC193120}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Runner", "3 Runner", "{7796373C-DDA0-4CF2-B8FA-3F463B6B074A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Runner", "2 Runner", "{7796373C-DDA0-4CF2-B8FA-3F463B6B074A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Tests", "2 Tests", "{F79A713D-A5EA-4E62-8045-4EF711F43F3D}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\DickinsonBros.Stopwatch.runsettings = Tests\DickinsonBros.Stopwatch.runsettings
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch.Runner", "DickinsonBros.Stopwatch.Runner\DickinsonBros.Stopwatch.Runner.csproj", "{AA5C28E8-70ED-4648-8A80-530CEC093289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch", "Source\DickinsonBros.Stopwatch\DickinsonBros.Stopwatch.csproj", "{D02B38EC-FC36-40E6-A784-F8B1177EBA6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch.Tests", "Tests\DickinsonBros.Stopwatch.Tests\DickinsonBros.Stopwatch.Tests.csproj", "{EB19706F-5947-4B88-A706-63907EB7B722}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch.Runner", "Runner\DickinsonBros.Stopwatch.Runner\DickinsonBros.Stopwatch.Runner.csproj", "{CE312AF4-5FB0-44B9-AC75-00F92279176B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,26 +31,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{792CEDF3-A301-43BB-815E-0F97C65FEBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{792CEDF3-A301-43BB-815E-0F97C65FEBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{792CEDF3-A301-43BB-815E-0F97C65FEBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{792CEDF3-A301-43BB-815E-0F97C65FEBBF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{519FB6BF-5299-484D-A657-61A5BC193120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{519FB6BF-5299-484D-A657-61A5BC193120}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{519FB6BF-5299-484D-A657-61A5BC193120}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{519FB6BF-5299-484D-A657-61A5BC193120}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA5C28E8-70ED-4648-8A80-530CEC093289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA5C28E8-70ED-4648-8A80-530CEC093289}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA5C28E8-70ED-4648-8A80-530CEC093289}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA5C28E8-70ED-4648-8A80-530CEC093289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02B38EC-FC36-40E6-A784-F8B1177EBA6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02B38EC-FC36-40E6-A784-F8B1177EBA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02B38EC-FC36-40E6-A784-F8B1177EBA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02B38EC-FC36-40E6-A784-F8B1177EBA6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB19706F-5947-4B88-A706-63907EB7B722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB19706F-5947-4B88-A706-63907EB7B722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB19706F-5947-4B88-A706-63907EB7B722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB19706F-5947-4B88-A706-63907EB7B722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE312AF4-5FB0-44B9-AC75-00F92279176B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE312AF4-5FB0-44B9-AC75-00F92279176B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE312AF4-5FB0-44B9-AC75-00F92279176B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE312AF4-5FB0-44B9-AC75-00F92279176B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{792CEDF3-A301-43BB-815E-0F97C65FEBBF} = {44C4C9E1-E118-45AE-8B7D-6968DE28ACFE}
-		{519FB6BF-5299-484D-A657-61A5BC193120} = {44C4C9E1-E118-45AE-8B7D-6968DE28ACFE}
-		{AA5C28E8-70ED-4648-8A80-530CEC093289} = {7796373C-DDA0-4CF2-B8FA-3F463B6B074A}
+		{D02B38EC-FC36-40E6-A784-F8B1177EBA6E} = {44C4C9E1-E118-45AE-8B7D-6968DE28ACFE}
+		{EB19706F-5947-4B88-A706-63907EB7B722} = {F79A713D-A5EA-4E62-8045-4EF711F43F3D}
+		{CE312AF4-5FB0-44B9-AC75-00F92279176B} = {7796373C-DDA0-4CF2-B8FA-3F463B6B074A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45E12029-6AC1-4539-906C-DCB1ACA6977E}

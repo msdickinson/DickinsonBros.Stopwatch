@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DickinsonBros.Stopwatch\DickinsonBros.Stopwatch.csproj" />
+    <ProjectReference Include="..\..\Source\DickinsonBros.Stopwatch\DickinsonBros.Stopwatch.csproj" />
   </ItemGroup>
 
 </Project>
