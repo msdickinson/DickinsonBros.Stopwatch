@@ -20,4 +20,4 @@ await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
     Start Timer And Wait 1 Seconds
     ElapsedMilliseconds: 1008
 
-[Sample Runner](https://github.com/msdickinson/DickinsonBros.Stopwatch/tree/master/DickinsonBros.Stopwatch.Runner)
+[Sample Runner](Runner/DickinsonBros.Stopwatch.Runner)
