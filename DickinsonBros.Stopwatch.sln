@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Source", "1 Source", "{44
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Misc", "9 Misc", "{DDEE2355-FECA-4F4D-85FE-FC7C82CBB42C}"
 	ProjectSection(SolutionItems) = preProject
-		Scripts\Prerelease.DickinsonBros.Stopwatch.ps1 = Scripts\Prerelease.DickinsonBros.Stopwatch.ps1
+		Scripts\PackagePrerelease.ps1 = Scripts\PackagePrerelease.ps1
 		Scripts\Publish.yml = Scripts\Publish.yml
 		Scripts\Test.yml = Scripts\Test.yml
 	EndProjectSection
@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Runner", "3 Runner", "{77
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Tests", "2 Tests", "{F79A713D-A5EA-4E62-8045-4EF711F43F3D}"
 	ProjectSection(SolutionItems) = preProject
-		Tests\DickinsonBros.Stopwatch.runsettings = Tests\DickinsonBros.Stopwatch.runsettings
+		Tests\CodeCoverage.runsettings = Tests\CodeCoverage.runsettings
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Stopwatch", "Source\DickinsonBros.Stopwatch\DickinsonBros.Stopwatch.csproj", "{D02B38EC-FC36-40E6-A784-F8B1177EBA6E}"
